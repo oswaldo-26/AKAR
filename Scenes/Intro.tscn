@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciw5ui8xilc61"]
+
+[ext_resource type="Texture2D" uid="uid://ch1t84nidvaub" path="res://resources/background-game.jpg" id="1_3edat"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rrrc0"]
+texture = ExtResource("1_3edat")
+
+[node name="Intro" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rrrc0")

@@ -1,0 +1,108 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7yd7qc4koslg"]
+
+[ext_resource type="FontFile" uid="uid://j5bnjmi1t2js" path="res://resources/fonts/Pixellari.ttf" id="1_t6qd3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6qd3"]
+bg_color = Color(0, 0, 0, 0.509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpiga"]
+bg_color = Color(0.615303, 0.288923, 0.151165, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.44718, 0.200393, 0.0956883, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eiy7p"]
+bg_color = Color(0.684208, 0.410325, 0.271866, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.254772, 0.187275, 0.0838471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.214703, 0.214703, 0.214703, 0.6)
+shadow_size = 2
+shadow_offset = Vector2(-0.595, 1.28)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjwba"]
+bg_color = Color(0.44718, 0.200393, 0.0956883, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.254772, 0.187275, 0.0838471, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.214703, 0.214703, 0.214703, 0.6)
+shadow_size = 2
+shadow_offset = Vector2(-0.595, 1.28)
+
+[node name="RotatePopup" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t6qd3")
+
+[node name="PopupBox" type="Panel" parent="."]
+custom_minimum_size = Vector2(620, 320)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -310.0
+offset_top = -160.0
+offset_right = 310.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lpiga")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="MarginContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_t6qd3")
+theme_override_font_sizes/font_size = 30
+text = "Please rotate your device to landscape for the best experience."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="CloseButton" type="Button" parent="MarginContainer/CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_t6qd3")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_eiy7p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjwba")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kjwba")
+text = "Continue Anyway"

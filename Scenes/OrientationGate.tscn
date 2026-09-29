@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1m4ikwi7r12"]
+
+[ext_resource type="PackedScene" uid="uid://c7yd7qc4koslg" path="res://Scenes/orientation_popup.tscn" id="1_llrh7"]
+
+[node name="OrientationGate" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RotatePopup" parent="." instance=ExtResource("1_llrh7")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1

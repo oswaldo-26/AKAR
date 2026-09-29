@@ -1,0 +1,207 @@
+[gd_scene load_steps=21 format=3 uid="uid://du00uw5m6c11j"]
+
+[ext_resource type="Texture2D" uid="uid://kr7otl5alqq7" path="res://resources/banaan.png" id="1_qixhx"]
+[ext_resource type="Texture2D" uid="uid://2hpmyy1xls7g" path="res://resources/Andres/andres_walking1.png" id="2_oohlq"]
+[ext_resource type="Texture2D" uid="uid://cjwxttun4eycy" path="res://resources/Andres/andres_front1.png" id="2_r4jek"]
+[ext_resource type="Texture2D" uid="uid://kyqvxxbbh8vf" path="res://resources/Andres/andres_front2.png" id="3_anqcc"]
+[ext_resource type="Texture2D" uid="uid://bqooejb86srh7" path="res://resources/Andres/andres_walking2.png" id="3_jt0x1"]
+[ext_resource type="Texture2D" uid="uid://cekidsnq1tfky" path="res://resources/Andres/andres_back.png" id="4_bmr0o"]
+[ext_resource type="Texture2D" uid="uid://bnbmc0f2xh5un" path="res://resources/Andres/andres_leftside_walking1.png" id="4_k8asr"]
+[ext_resource type="Texture2D" uid="uid://bp4xju66fpsiu" path="res://resources/Andres/andres_leftside_walking2.png" id="5_033ic"]
+[ext_resource type="Texture2D" uid="uid://dfq2inrfvfdss" path="res://resources/Andres/andres_back2.png" id="5_vgva0"]
+[ext_resource type="Texture2D" uid="uid://c3msl0wyy8q35" path="res://resources/Andres/andres_rightside_walking1.png" id="6_b47cf"]
+[ext_resource type="Texture2D" uid="uid://j27xidwqhepb" path="res://resources/Andres/andres_rightside_walking2.png" id="7_fcr5p"]
+[ext_resource type="Texture2D" uid="uid://bjgssn5f6560w" path="res://resources/Andres/andres_leftside.png" id="9_anqcc"]
+[ext_resource type="Script" uid="uid://b4gwnmv2cv3qr" path="res://Scenes/player.gd" id="10_b47cf"]
+[ext_resource type="Texture2D" uid="uid://cwg403772yuat" path="res://resources/Andres/andres_rightside.png" id="12_bmr0o"]
+[ext_resource type="Texture2D" uid="uid://b1jofsdn7mamj" path="res://resources/Andres/andres_back_walking1.png" id="12_ift0h"]
+[ext_resource type="Texture2D" uid="uid://cial42y7km2v5" path="res://resources/Andres/andres_back_walking2.png" id="13_tyblk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bmr0o"]
+size = Vector2(383.5, 3825.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgva0"]
+size = Vector2(6406, 209.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r4jek"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r4jek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_anqcc")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_anqcc")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_bmr0o")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bmr0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vgva0")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jt0x1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r4jek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_oohlq")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_k8asr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_anqcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_033ic")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_b47cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bmr0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fcr5p")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_ift0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bmr0o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tyblk")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgva0"]
+radius = 71.0
+height = 212.0
+
+[node name="BanaanExterior" type="Node2D"]
+
+[node name="Ground" type="ColorRect" parent="."]
+offset_left = -2126.0
+offset_right = 6222.0
+offset_bottom = 3826.0
+color = Color(0.352941, 0.560784, 0.235294, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Ground"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1808.0
+offset_right = 8347.0
+color = Color(0.352941, 0.560784, 0.235294, 1)
+
+[node name="BanaanBuilding" type="Sprite2D" parent="Ground"]
+position = Vector2(4009, 169)
+scale = Vector2(16.8307, 16.8307)
+texture = ExtResource("1_qixhx")
+
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+layout_mode = 0
+offset_top = 2467.0
+offset_right = 8343.0
+offset_bottom = 3211.0
+
+[node name="ColorRect2" type="ColorRect" parent="Ground/ColorRect"]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 8343.0
+offset_bottom = 692.0
+color = Color(0.152476, 0.152476, 0.152476, 1)
+
+[node name="leftWall" type="StaticBody2D" parent="Ground"]
+position = Vector2(-2126, 715)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/leftWall"]
+position = Vector2(2876, 1202)
+shape = SubResource("RectangleShape2D_bmr0o")
+
+[node name="rightWall" type="StaticBody2D" parent="Ground"]
+position = Vector2(-2126, 715)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/rightWall"]
+position = Vector2(9602, 1248)
+shape = SubResource("RectangleShape2D_bmr0o")
+
+[node name="botWall" type="StaticBody2D" parent="Ground"]
+position = Vector2(-2126, 715)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/botWall"]
+position = Vector2(6236, 3018.75)
+shape = SubResource("RectangleShape2D_vgva0")
+
+[node name="topWall" type="StaticBody2D" parent="Ground"]
+position = Vector2(-2126, 715)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/topWall"]
+position = Vector2(6268, -769)
+shape = SubResource("RectangleShape2D_vgva0")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-119, 87)
+script = ExtResource("10_b47cf")
+
+[node name="Character" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(1997, 1764)
+sprite_frames = SubResource("SpriteFrames_r4jek")
+animation = &"walk_up"
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(1997, 1764)
+zoom = Vector2(0.2, 0.2)
+limit_left = 2126
+limit_top = -450
+limit_right = 5192
+limit_bottom = 3826
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1986, 1777)
+shape = SubResource("CapsuleShape2D_vgva0")

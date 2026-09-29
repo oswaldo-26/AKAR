@@ -1,0 +1,175 @@
+[gd_scene load_steps=15 format=3 uid="uid://bfndrtea4k2ig"]
+
+[ext_resource type="Shader" uid="uid://bn2tlqahjb764" path="res://Scenes/LocationSelection.gdshader" id="1_i1x8w"]
+[ext_resource type="Script" uid="uid://rrcpr1yhxnej" path="res://Scenes/location_selection.gd" id="1_px8oj"]
+[ext_resource type="Texture2D" uid="uid://dkn07l2of3wp4" path="res://resources/lingayen map.png" id="1_yw0py"]
+[ext_resource type="FontFile" uid="uid://j5bnjmi1t2js" path="res://resources/fonts/Pixellari.ttf" id="2_dq4ex"]
+[ext_resource type="Texture2D" uid="uid://ch1t84nidvaub" path="res://resources/background-game.jpg" id="2_h68im"]
+[ext_resource type="PackedScene" uid="uid://dufyggrb6tvt7" path="res://Scenes/LocationMarker.tscn" id="4_h68im"]
+[ext_resource type="Texture2D" uid="uid://b7c3b1oij147c" path="res://resources/urduja [ic.jpeg" id="6_malth"]
+[ext_resource type="PackedScene" uid="uid://b33jwks5f30ku" path="res://Scenes/LocationPopup.tscn" id="7_malth"]
+[ext_resource type="Texture2D" uid="uid://d1w5xpa6kmmnf" path="res://resources/capitol pic.jpg" id="7_nrkse"]
+[ext_resource type="Texture2D" uid="uid://icwcdjg5e76e" path="res://resources/banaan pic.jpeg" id="8_laa3e"]
+[ext_resource type="Texture2D" uid="uid://boeofqow5bt4x" path="res://resources/limahong pic.jpg" id="8_mwn6t"]
+[ext_resource type="Texture2D" uid="uid://dxi25mvln0b04" path="res://resources/church pic.jpg" id="8_uecm2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pqa1g"]
+shader = ExtResource("1_i1x8w")
+shader_parameter/blur_amount = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1x8w"]
+bg_color = Color(0.615303, 0.288923, 0.151165, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.44718, 0.200393, 0.0956883, 1)
+
+[node name="LocationSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_px8oj")
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0.509804, 0.509804, 0.509804, 1)
+material = SubResource("ShaderMaterial_pqa1g")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_h68im")
+
+[node name="MapContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25
+anchor_top = 1.0
+anchor_right = 0.75
+anchor_bottom = 1.0
+offset_left = -84.0
+offset_top = -499.6
+offset_right = 84.0
+offset_bottom = 500.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.333
+
+[node name="Map" type="TextureRect" parent="MapContainer"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("1_yw0py")
+
+[node name="UrdujaMarker" parent="MapContainer/Map" instance=ExtResource("4_h68im")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.479
+anchor_top = 0.047
+anchor_right = 0.479
+anchor_bottom = 0.047
+offset_left = -20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+description = "Within Lingayen’s provincial government complex stands a residence shaped by leadership, history, and cultural memory. Construction of Urduja House began in 1953 under Governor Juan de Guzman Rodriguez. Originally named Princess Urduja Palace, it honors Princess Urduja, a legendary cultural figure associated with Pangasinan. Its Balinese-inspired design and continuing role as the official residence of the governor make it one of the province’s distinctive government landmarks. Enter its public halls and discover how the story of Urduja House continues today."
+location_image = ExtResource("6_malth")
+
+[node name="CapitolMarker" parent="MapContainer/Map" instance=ExtResource("4_h68im")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.555
+anchor_top = 0.128
+anchor_right = 0.555
+anchor_bottom = 0.128
+offset_left = -20.0
+offset_top = 15.0
+offset_right = 50.0
+offset_bottom = 20.0
+location_id = "capitol"
+location_name = "Provincial Capitol Bldng."
+description = "At the heart of Lingayen stands one of Pangasinan’s most enduring symbols of government, history, and public service. Construction began in 1917 under Governor Daniel Maramba and was completed in 1918. Designed by American architect Ralph Harrington Doane, the building reflects the dignity and order of American colonial neoclassical architecture. Damaged during the Second World War and later reconstructed, the Capitol continued to serve as the center of provincial governance. Walk through its monumental spaces and discover how the Capitol became a lasting landmark of Pangasinan’s resilience and heritage."
+location_image = ExtResource("7_nrkse")
+
+[node name="LimahongMarker" parent="MapContainer/Map" instance=ExtResource("4_h68im")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.325
+anchor_top = 0.047
+anchor_right = 0.325
+anchor_bottom = 0.047
+offset_left = -20.0
+offset_top = 20.0
+offset_right = 20.0
+offset_bottom = 20.0
+location_id = "limahong"
+location_name = "Limahong Channel"
+description = "Along the waterways of Pangapisan Norte lies a landmark connected with one of Pangasinan’s most dramatic sixteenth-century escape stories. After his unsuccessful attack on Manila in 1574, the Chinese pirate and military leader Limahong fled north and established a fortified settlement near Lingayen. When forces led by Juan de Salcedo besieged the settlement in 1575, Limahong’s followers secretly excavated a passage toward the sea."
+location_image = ExtResource("8_mwn6t")
+
+[node name="BanaanMarker" parent="MapContainer/Map" instance=ExtResource("4_h68im")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.347
+anchor_top = 0.133
+anchor_right = 0.347
+anchor_bottom = 0.133
+offset_left = -20.0
+offset_top = 5.0
+offset_right = 30.0
+offset_bottom = 20.0
+location_id = "banaan"
+location_name = "Banaan Provincial Museum"
+description = "In the historic center of Lingayen stands a building that once governed Pangasinan and now preserves its story. Built in 1840, Casa Real served as the residence and office of the Alcalde Mayor and as the province’s administrative and judicial center. Across changing periods, it witnessed revolution, colonial transition, wartime occupation, public service, and years of deterioration. Restored through a multiagency preservation effort, the historic building began a new chapter. Enter Casa Real and discover Pangasinan’s history and identity inside the Banáan Pangasinan Provincial Museum."
+location_image = ExtResource("8_laa3e")
+exterior_scene_path = "res://Scenes/BanaanExterior.tscn"
+
+[node name="ChurchMarker" parent="MapContainer/Map" instance=ExtResource("4_h68im")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.459
+anchor_top = 0.216
+anchor_right = 0.459
+anchor_bottom = 0.216
+offset_left = -20.0
+offset_top = 10.0
+offset_right = 30.0
+offset_bottom = 20.0
+location_id = "cathedral church"
+location_name = "Epiphany of Our Lord Co-Cathedral Parish"
+description = "In the heart of Lingayen stands a church shaped by centuries of faith, conflict, and community resilience. Historically known as Los Tres Reyes, its story reaches back to Catholic missionary activity during the Spanish colonial period. Explore its distinctive tower, historic bells, and enduring role as a co-cathedral of faith and heritage."
+location_image = ExtResource("8_uecm2")
+
+[node name="HeaderBox" type="Panel" parent="."]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 300.0
+offset_top = 10.0
+offset_right = -300.0
+offset_bottom = 161.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i1x8w")
+
+[node name="HeaderLabel" type="Label" parent="HeaderBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.218
+anchor_top = 0.421
+anchor_right = 0.775
+anchor_bottom = 0.645
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_dq4ex")
+theme_override_font_sizes/font_size = 70
+text = "Select a Location"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LocationPopup" parent="." instance=ExtResource("7_malth")]

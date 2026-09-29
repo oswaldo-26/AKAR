@@ -1,0 +1,208 @@
+[gd_scene load_steps=11 format=3 uid="uid://8ks4c4d6otv7"]
+
+[ext_resource type="FontFile" uid="uid://j5bnjmi1t2js" path="res://resources/fonts/Pixellari.ttf" id="1_j8ry8"]
+[ext_resource type="Script" uid="uid://b3jg4ri7wmy03" path="res://Scenes/settings_popup.gd" id="1_v3i32"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6qd3"]
+bg_color = Color(0, 0, 0, 0.509804)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lpiga"]
+bg_color = Color(0.846217, 0.438914, 0.272172, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.44718, 0.200393, 0.0956883, 1)
+
+[sub_resource type="Gradient" id="Gradient_j8ry8"]
+colors = PackedColorArray(0.909804, 0.835294, 0.690196, 1, 0.909804, 0.835294, 0.690196, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_v3i32"]
+gradient = SubResource("Gradient_j8ry8")
+width = 24
+height = 50
+fill_from = Vector2(0.00569801, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hw6y3"]
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+bg_color = Color(0.44718, 0.200393, 0.0956883, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01cjy"]
+bg_color = Color(0.909804, 0.835294, 0.690196, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnt2y"]
+bg_color = Color(0.909804, 0.835294, 0.690196, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0ypw"]
+bg_color = Color(0.615303, 0.288923, 0.151165, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.44718, 0.200393, 0.0956883, 1)
+
+[node name="SettingsPopup" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_t6qd3")
+script = ExtResource("1_v3i32")
+
+[node name="PopupBox" type="Panel" parent="."]
+custom_minimum_size = Vector2(620, 320)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -414.0
+offset_top = -285.0
+offset_right = 414.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lpiga")
+
+[node name="MarginContainer" type="MarginContainer" parent="PopupBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupBox/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="PopupBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_j8ry8")
+theme_override_font_sizes/font_size = 55
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="musicSlider" type="HBoxContainer" parent="PopupBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="PopupBox/MarginContainer/VBoxContainer/musicSlider"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_j8ry8")
+theme_override_font_sizes/font_size = 45
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="PopupBox/MarginContainer/VBoxContainer/musicSlider"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = SubResource("GradientTexture2D_v3i32")
+theme_override_styles/slider = SubResource("StyleBoxFlat_hw6y3")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_01cjy")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xnt2y")
+max_value = 1.0
+step = 0.5
+
+[node name="sfxSlider" type="HBoxContainer" parent="PopupBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="PopupBox/MarginContainer/VBoxContainer/sfxSlider"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_j8ry8")
+theme_override_font_sizes/font_size = 45
+text = "Effects"
+
+[node name="SFXSlider" type="HSlider" parent="PopupBox/MarginContainer/VBoxContainer/sfxSlider"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_icons/grabber = SubResource("GradientTexture2D_v3i32")
+theme_override_styles/slider = SubResource("StyleBoxFlat_hw6y3")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_01cjy")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xnt2y")
+max_value = 1.0
+step = 0.5
+
+[node name="muteToggle" type="HBoxContainer" parent="PopupBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="PopupBox/MarginContainer/VBoxContainer/muteToggle"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_j8ry8")
+theme_override_font_sizes/font_size = 45
+text = "Mute All"
+
+[node name="Control" type="Control" parent="PopupBox/MarginContainer/VBoxContainer/muteToggle"]
+custom_minimum_size = Vector2(66, 48)
+layout_mode = 2
+
+[node name="muteCheck" type="CheckButton" parent="PopupBox/MarginContainer/VBoxContainer/muteToggle/Control"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_top = -11.0
+offset_right = 44.0
+offset_bottom = 20.0
+scale = Vector2(2, 2)
+
+[node name="fullscreenToggle" type="HBoxContainer" parent="PopupBox/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="PopupBox/MarginContainer/VBoxContainer/fullscreenToggle"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_j8ry8")
+theme_override_font_sizes/font_size = 45
+text = "Fullscreen"
+
+[node name="Control" type="Control" parent="PopupBox/MarginContainer/VBoxContainer/fullscreenToggle"]
+custom_minimum_size = Vector2(66, 48)
+layout_mode = 2
+
+[node name="fullscreenCheck" type="CheckButton" parent="PopupBox/MarginContainer/VBoxContainer/fullscreenToggle/Control"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = -48.0
+offset_top = -6.5
+offset_right = -4.0
+offset_bottom = 24.5
+scale = Vector2(2, 2)
+
+[node name="CloseButton" type="Button" parent="PopupBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0.999995, 0.734144, 0.727211, 1)
+theme_override_fonts/font = ExtResource("1_j8ry8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u0ypw")
+text = "X"

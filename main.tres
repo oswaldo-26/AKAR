@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://odrvij7piulr"]
+
+[ext_resource type="FontFile" uid="uid://j5bnjmi1t2js" path="res://resources/fonts/Pixellari.ttf" id="1_24q3n"]
+
+[resource]
+default_font = ExtResource("1_24q3n")
+default_font_size = 16

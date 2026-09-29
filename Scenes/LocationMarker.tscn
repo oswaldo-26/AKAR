@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://dufyggrb6tvt7"]
+
+[ext_resource type="Texture2D" uid="uid://bx7okovx1skpq" path="res://resources/circlemarker.png" id="1_1fjn8"]
+[ext_resource type="Script" uid="uid://dtxtso3qqlmj0" path="res://Scenes/location_marker.gd" id="1_8qcw5"]
+[ext_resource type="FontFile" uid="uid://j5bnjmi1t2js" path="res://resources/fonts/Pixellari.ttf" id="2_w2an3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1fjn8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w2an3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qcw5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fjn8"]
+bg_color = Color(0.846217, 0.438914, 0.272172, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.44718, 0.200393, 0.0956883, 1)
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[node name="LocationMarker" type="Button"]
+custom_minimum_size = Vector2(30, 30)
+offset_left = 120.0
+offset_top = 76.0
+offset_right = 150.0
+offset_bottom = 106.0
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1fjn8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w2an3")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8qcw5")
+script = ExtResource("1_8qcw5")
+location_id = "urduja"
+location_name = "Urduja House"
+description = "princess urduja house in lingayen"
+
+[node name="PinCircle" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1_1fjn8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NameBox" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1fjn8")
+
+[node name="Label" type="Label" parent="NameBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_w2an3")
+theme_override_font_sizes/font_size = 25
+text = "Location Name"
+horizontal_alignment = 1
+vertical_alignment = 1

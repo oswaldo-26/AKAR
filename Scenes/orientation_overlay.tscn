@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bir2pko14oqn5"]
+
+[ext_resource type="Script" uid="uid://cwvif3irrh6fe" path="res://Scenes/orientation_overlay.gd" id="1_4gi8m"]
+[ext_resource type="PackedScene" uid="uid://c7yd7qc4koslg" path="res://Scenes/orientation_popup.tscn" id="2_qsy4k"]
+
+[node name="OrientationOverlay" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_4gi8m")
+
+[node name="RotatePopup" parent="." instance=ExtResource("2_qsy4k")]
