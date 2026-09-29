@@ -195,8 +195,12 @@ tile_set = SubResource("TileSet_8um5k")
 [node name="SettingsPopup" parent="." instance=ExtResource("8_koqhg")]
 layout_mode = 0
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [connection signal="pressed" from="VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
-[connection signal="pressed" from="VBoxContainer/AboutBtn" to="." method="_on_rename_btn_pressed"]
 [connection signal="pressed" from="VBoxContainer/AboutBtn" to="." method="_on_about_btn_pressed"]
+[connection signal="pressed" from="VBoxContainer/AboutBtn" to="." method="_on_rename_btn_pressed"]
