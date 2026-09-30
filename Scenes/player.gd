@@ -7,18 +7,13 @@ var last_direction: String = "down"
 @onready var animated_sprite: AnimatedSprite2D = $Character
 
 func _physics_process(delta: float) -> void:
-	var input_vector: Vector2 = Vector2.ZERO
+	var input_vector: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 
-	if Input.is_action_pressed("ui_right"):
-		input_vector.x += 1
-	if Input.is_action_pressed("ui_left"):
-		input_vector.x -= 1
-	if Input.is_action_pressed("ui_down"):
-		input_vector.y += 1
-	if Input.is_action_pressed("ui_up"):
-		input_vector.y -= 1
-
-	input_vector = input_vector.normalized()
+	# Snap to one axis so it never moves diagonally
+	if abs(input_vector.x) > abs(input_vector.y):
+		input_vector = Vector2(sign(input_vector.x), 0)
+	elif input_vector.y != 0:
+		input_vector = Vector2(0, sign(input_vector.y))
 
 	velocity = input_vector * move_speed
 	move_and_slide()

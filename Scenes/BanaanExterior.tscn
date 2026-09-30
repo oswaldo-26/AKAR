@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://du00uw5m6c11j"]
+[gd_scene load_steps=22 format=3 uid="uid://du00uw5m6c11j"]
 
 [ext_resource type="Texture2D" uid="uid://kr7otl5alqq7" path="res://resources/banaan.png" id="1_qixhx"]
 [ext_resource type="Texture2D" uid="uid://2hpmyy1xls7g" path="res://resources/Andres/andres_walking1.png" id="2_oohlq"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://cwg403772yuat" path="res://resources/Andres/andres_rightside.png" id="12_bmr0o"]
 [ext_resource type="Texture2D" uid="uid://b1jofsdn7mamj" path="res://resources/Andres/andres_back_walking1.png" id="12_ift0h"]
 [ext_resource type="Texture2D" uid="uid://cial42y7km2v5" path="res://resources/Andres/andres_back_walking2.png" id="13_tyblk"]
+[ext_resource type="PackedScene" uid="uid://d2ou5hcdh3uw7" path="res://joystick.tscn" id="17_vgva0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bmr0o"]
 size = Vector2(383.5, 3825.5)
@@ -117,7 +118,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk_up",
-"speed": 5.0
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vgva0"]
@@ -191,6 +192,7 @@ script = ExtResource("10_b47cf")
 
 [node name="Character" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(1997, 1764)
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_r4jek")
 animation = &"walk_up"
 
@@ -205,3 +207,11 @@ limit_bottom = 3826
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(1986, 1777)
 shape = SubResource("CapsuleShape2D_vgva0")
+
+[node name="Joystick" parent="." instance=ExtResource("17_vgva0")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
