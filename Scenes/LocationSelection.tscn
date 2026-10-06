@@ -79,7 +79,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 description = "Within Lingayen’s provincial government complex stands a residence shaped by leadership, history, and cultural memory. Construction of Urduja House began in 1953 under Governor Juan de Guzman Rodriguez. Originally named Princess Urduja Palace, it honors Princess Urduja, a legendary cultural figure associated with Pangasinan. Its Balinese-inspired design and continuing role as the official residence of the governor make it one of the province’s distinctive government landmarks. Enter its public halls and discover how the story of Urduja House continues today."
 location_image = ExtResource("6_malth")
-exterior_scene_path = "C:/Users/leeha/OneDrive/Documents/akar/Scenes/ExteriorScenes/UrdujaExterior.tscn"
+exterior_scene_path = "res://Scenes/ExteriorScenes/UrdujaExterior.tscn"
 
 [node name="CapitolMarker" parent="MapContainer/Map" instance=ExtResource("4_h68im")]
 layout_mode = 1
@@ -96,7 +96,7 @@ location_id = "capitol"
 location_name = "Provincial Capitol Bldng."
 description = "At the heart of Lingayen stands one of Pangasinan’s most enduring symbols of government, history, and public service. Construction began in 1917 under Governor Daniel Maramba and was completed in 1918. Designed by American architect Ralph Harrington Doane, the building reflects the dignity and order of American colonial neoclassical architecture. Damaged during the Second World War and later reconstructed, the Capitol continued to serve as the center of provincial governance. Walk through its monumental spaces and discover how the Capitol became a lasting landmark of Pangasinan’s resilience and heritage."
 location_image = ExtResource("7_nrkse")
-exterior_scene_path = "C:/Users/leeha/OneDrive/Documents/akar/Scenes/ExteriorScenes/CapitolExterior.tscn"
+exterior_scene_path = "res://Scenes/ExteriorScenes/CapitolExterior.tscn"
 
 [node name="LimahongMarker" parent="MapContainer/Map" instance=ExtResource("4_h68im")]
 layout_mode = 1
@@ -113,7 +113,7 @@ location_id = "limahong"
 location_name = "Limahong Channel"
 description = "Along the waterways of Pangapisan Norte lies a landmark connected with one of Pangasinan’s most dramatic sixteenth-century escape stories. After his unsuccessful attack on Manila in 1574, the Chinese pirate and military leader Limahong fled north and established a fortified settlement near Lingayen. When forces led by Juan de Salcedo besieged the settlement in 1575, Limahong’s followers secretly excavated a passage toward the sea."
 location_image = ExtResource("8_mwn6t")
-exterior_scene_path = "C:/Users/leeha/OneDrive/Documents/akar/Scenes/ExteriorScenes/LimahongExterior.tscn"
+exterior_scene_path = "res://Scenes/ExteriorScenes/LimahongExterior.tscn"
 
 [node name="BanaanMarker" parent="MapContainer/Map" instance=ExtResource("4_h68im")]
 layout_mode = 1
@@ -130,7 +130,7 @@ location_id = "banaan"
 location_name = "Banaan Provincial Museum"
 description = "In the historic center of Lingayen stands a building that once governed Pangasinan and now preserves its story. Built in 1840, Casa Real served as the residence and office of the Alcalde Mayor and as the province’s administrative and judicial center. Across changing periods, it witnessed revolution, colonial transition, wartime occupation, public service, and years of deterioration. Restored through a multiagency preservation effort, the historic building began a new chapter. Enter Casa Real and discover Pangasinan’s history and identity inside the Banáan Pangasinan Provincial Museum."
 location_image = ExtResource("8_laa3e")
-exterior_scene_path = "C:/Users/leeha/OneDrive/Documents/akar/Scenes/ExteriorScenes/BanaanExterior.tscn"
+exterior_scene_path = "res://Scenes/ExteriorScenes/BanaanExterior.tscn"
 
 [node name="ChurchMarker" parent="MapContainer/Map" instance=ExtResource("4_h68im")]
 layout_mode = 1
@@ -147,7 +147,7 @@ location_id = "cathedral church"
 location_name = "Epiphany of Our Lord Co-Cathedral Parish"
 description = "In the heart of Lingayen stands a church shaped by centuries of faith, conflict, and community resilience. Historically known as Los Tres Reyes, its story reaches back to Catholic missionary activity during the Spanish colonial period. Explore its distinctive tower, historic bells, and enduring role as a co-cathedral of faith and heritage."
 location_image = ExtResource("8_uecm2")
-exterior_scene_path = "C:/Users/leeha/OneDrive/Documents/akar/Scenes/ExteriorScenes/ChurchExterior.tscn"
+exterior_scene_path = "res://Scenes/ExteriorScenes/ChurchExterior.tscn"
 
 [node name="HeaderBox" type="Panel" parent="."]
 custom_minimum_size = Vector2(100, 150)
